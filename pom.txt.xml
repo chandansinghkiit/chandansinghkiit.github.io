@@ -42,9 +42,20 @@
   <!-- Spring mvc -->
   <dependency>
     <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>${spring.version}</version>
+    <exclusions>
+    <exclusion>
+    <groupId>commons-logging</groupId>
+    <artifactId>commons-logging</artifactId>
+    </exclusion>
+    </exclusions>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
     <artifactId>spring-webmvc</artifactId>
     <version>${spring.version}</version>
-</dependency>
+    </dependency>
   
   <!-- EXCEL 2010 OR LATER VERSION XSS -->
   
@@ -83,12 +94,31 @@
     <version>${hibernate.version}</version>
 </dependency>
 
+<!-- SLF4J Logging -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.1</version>
+		</dependency>	
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>1.7.24</version>
+		</dependency>
+		
 
  <!-- pooling apache commans dependency  -->
    <dependency>
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-dbcp2</artifactId>
     <version>2.1.1</version>
+    <exclusions>
+    <exclusion>
+    <groupId>commons-logging</groupId>
+    <artifactId>commons-logging</artifactId>
+    </exclusion>
+    </exclusions>
 </dependency>
 
  <dependency>
